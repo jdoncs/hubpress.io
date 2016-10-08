@@ -35,12 +35,16 @@ Okay. So we have that NASH is an important problem, and that probably $NP > NASH
 
 Brouwer's fixed point theorem says that if you map any "reasonable" subset of a Euclidian space to a "reasonable" subspace of itself, there's at least one point that doesn't move (i.e. the "fixed" point). Here, "reasonable" means that it's a contiguous proper sub-region of the space. So the unit ball is good (for any number of dimensions), but something like two disjoint balls isn't. If you think about this for a minute, it seems true, though if I think about it for more than a minute I always come up with some weird mapping that seems like it doesn't have a fixed point. Later I always figure out what the fixed point is though. Nash's theorem relies on this notion. The space is the set of probabilities that each player uses to decide which strategy to play. This ends up being some sort of scaling of the unit ball for a high dimesional space, since the probabilities for each player need to sum to 1 (so we should get a ball with radius $n$, for $n$ players. Suppose that players adjust their strategies to improve utility, given the strategies of their opponents. Then each of these points has a sucessor point, the strategy profile that the players would move to if they started here. The mapping from points to successors is "reasonable", so by Brouwer's theorem, there's a fixed point, a point where the players don't want to move, which must be a Nash equilibrium.
 
-The authors propose the computational search problem BROUWER, which takes the unit hyper-cube with $m$ dimensions, and a polynomial-time computable mapping $F$ from points in the cube $x$ to other points in the cube $F(x)$, and produces a fixed point of the mapping. They do this $\epsilon$-approximate fixed point thing again, apparently because algorithms don't do irrational numbers (makes sense: we'd be "computing" forever just to write down an irrational fixed point). 
+The authors propose the computational search problem BROUWER, which takes the unit hyper-cube with $m$ dimensions, and a polynomial-time computable mapping $F$ from points in the cube $x$ to other points in the cube $F(x)$, and produces a fixed point of the mapping. They do this $\epsilon$-approximate fixed point thing again, apparently because algorithms don't do irrational numbers (makes sense: we'd be "computing" forever just to write down an irrational fixed point). They also require that $F$ obeys a Lipschitz condition: i.e. if two points $x$ and $y$ are a distance $d$ apart, then $F(x)$ and $F(y)$ are no more than $K\times d$ apart for some constant $K$.
 
 To show that BROUWER maps to END-OF-THE-LINE, the authors propose the following technique:
 
-1. Put down a lattice of points over the hypercube, such that the  diagonal distance between any two points in the lattice is never more than twice $\epsilon$. That is, every point in the hypercube is within a distance $\epsilon$ of one of the lattice points.
-2. Ever
+1. Put down a lattice of points over the hypercube, such that the  diagonal distance between any two points in the lattice is never more than twice $\epsilon$. That is, every point in the hypercube is within a distance $\epsilon$ of one of the lattice points. Strangly, this step is exponential in $\epsilon$ and $m$. The authors don't comment on this at all.
+2. For every point in the lattice $x$, compute $F(x)$, which is an efficient operation. 
+3. Divide the unit ball of dimension $m$ into three contiguous regions, and color them red, blue and yellow.
+4. Compute the direction of the vector $F(x) - x$, and map that vector onto the unit ball. Color lattice point $x$ based on the corresponding color from step 3.
+5. Define a mesh of triangular prisims over the lattice, of equal size.
+6. 
 
 
 
