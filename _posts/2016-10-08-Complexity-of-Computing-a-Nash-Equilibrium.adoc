@@ -39,12 +39,13 @@ The authors propose the computational search problem BROUWER, which takes the un
 
 To show that BROUWER maps to END-OF-THE-LINE, the authors propose the following technique:
 
-1. Put down a lattice of points over the hypercube, such that the  diagonal distance between any two points in the lattice is never more than twice $\epsilon$. That is, every point in the hypercube is within a distance $\epsilon$ of one of the lattice points. Strangly, this step is exponential in $\epsilon$ and $m$. The authors don't comment on this at all.
+1. Put down a lattice of points over the hypercube, with spacing that "depends on $K$, $\epsilon$ and $m$. Exactly how this dependency works is not explained. Strangly, this step appears to be exponential in $\epsilon$ and $m$. The authors don't comment on this at all.
 2. For every point in the lattice $x$, compute $F(x)$, which is an efficient operation. 
 3. Divide the unit ball of dimension $m$ into three contiguous regions, and color them red, blue and yellow.
-4. Compute the direction of the vector $F(x) - x$, and map that vector onto the unit ball. Color lattice point $x$ based on the corresponding color from step 3.
-5. Define a mesh of triangular prisims over the lattice, of equal size.
-6. 
+4. Compute the direction of the vector $F(x) - x$, and map that vector onto the unit ball. Color lattice point $x$ based on the corresponding color from step 3. If $F(x) = x$ for any lattice point then we don't even need to do the rest of this, so don't worry about that case (I think).
+
+
+Notice that the points along each edge of the hypercube will natrually ommit one color: if you're as far left as you can go, then there's no way to map a point to the left of where it is now, for instance. There's a 
 
 
 
