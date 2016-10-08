@@ -1,10 +1,19 @@
 = Complexity of Computing a Nash Equilibrium
-hp-tags: Game Theory, Computational Complexity
+:hp-tags Game Theory, Computational Complexity
 
 This is an older paper I've been meaning to read for a couple of years. It's by Christos Papadimitriou (who I've heard of and read before), Paul Goldberg (I think I've read him before), and Constantinos Daskalakis (who I've never heard of). Papadimitriou does a lot of exciting work. The two things that come to my mind are co-inventing https://en.wikipedia.org/wiki/Price_of_anarchy[Price of Anarchy], a metric for the cost of having self-interested (and rational) individuals do as they please, rather than imposing a solution on all of them from some central authority. It's very useful in mechanism design, because it allows us to quantify the improvement in social utility from using a given mechanism, vs. allowing the agents to settle into whatever the usual Nash Equilibrium is for the game of interest. Papadimitriou has also done some work in genetic algorithms, which purports to show that mutation is entirely pointless in evolutionary search. I haven't read the paper on this yet. Perhaps it should be my next review.
 
 == What is this paper about?
 
+In game theory, we study the behaviour of rational agents in various model problems. The classic example is the https://en.wikipedia.org/wiki/Prisoner%27s_dilemma[Prisoner's Dilemma]. Problems in game theory are modelled using the notation of a game. In a game, each actor (player) has a set of possible actions that they could take. Games are played in a single round, where each player picks an action, and an outcome occurs as a function of the joint actions of all the players. For example, in Prisoner's Dilemma, the problem of whether two criminals who have been apprehended should confess their crimes, or stay mum. In this game, each player has the same pair of actions. There are four possible outcomes:
+
+- If both players confess, they both go to jail for a long time (big punishment)
+- If one player confesses, and the other stays mum, then the confessing player gets a plea bargin (no punishment), and the one that stayed mum goes to jail for even longer (biggest punishment).
+- If both players stay mum, there's only circumstantial evidence against them, so they both to jail on a lessor offense (small punishment).
+
+Usually in game theory, we're interested in figuring out what rational agents would do when confronted with this problem. We can imagine a rational agent in this game to be a computer program that selects actions to minimize its punishment. If two rational agents play this game, we can then reason about what they'll do. The first agent notices that if the other agent stays mum, then their choices are to get a small punishment (by staying mum also), or no punishment at all (plea bargin). So if the other agent is staying mum, then a rational agent should confess. However, if the other player confessess, this agent has a choice between confessing too (big punishment), or staying mum and taking the fall (biggest punishment). Clearly it's better to confess in this case too. Therefore our agent should confess no matter what the other agent does. By identical reasoning, both agents confess, so we can say with confience that two rational agents playing this game will end up in an equilibrium where both of them receive a big punishment.
+
+We might wonder whether there's al
 
 
 
