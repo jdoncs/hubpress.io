@@ -1,4 +1,5 @@
 = Complexity of Computing a Nash Equilibrium
+:published_at: 2016-10-09
 :hp-tags: Game Theory, Computational Complexity
 
 https://people.csail.mit.edu/costis/simplified.pdf[Paper Here]
