@@ -117,7 +117,7 @@ Much more important is a point the authors raise: if it's not tractable to find 
 
 The paper is also 8 years old. I haven't heard anything about efficient algorithms (approximate or otherwise) for NASH, but I do wonder what sort of work people have done since towards this. Probably a reverse citation search on the paper would make it pretty apparent.
 
-I wonder too about the implications of quantum computers for PPAD. I know NP and BQP overlap, but are not subsets of one another. Where exactly does PPAD sit relative to BQP? It certainly _seems_ like the sort of thing that would be easy with something like Grover's algorithm, because we'd have a polynomial depth circuit to act as an oracle. However, we're not looking something that matches a signature, but something that's unchanged when it goes through the function. Have people worked on this topic? Maybe I should ask Chris Grenade what he thinks about this.
+I wonder too about the implications of quantum computers for PPAD. I know NP and BQP overlap, but are not subsets of one another. Where exactly does PPAD sit relative to BQP? It certainly _seems_ like the sort of thing that would be easy with something like Grover's algorithm, because we'd have a polynomial depth circuit to act as an oracle. However, we're not looking something that matches a signature, but something that's unchanged when it goes through the function. Have people worked on this topic? Maybe I should ask Chris Granade what he thinks about this.
 
 
 
