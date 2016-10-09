@@ -59,9 +59,9 @@ Notice that the points along each edge of the hypercube will naturally omit one 
 So now it's easy to convert the problem of finding an $\epsilon$-approximate fixed point (BROUWER) to END-OF-THE-LINE. Make a boolean circuit that encodes the direction of $F(x) - x$ for any mapping. This should be possible because we assumed $F$ was easy to compute. Enumerate  triangles that tesselate the space. There are countably many since the lattice spacing is finite. Build a boolean circuit that maps from each of the triangles to one of its neighbours according to the following rule: If one corner of the triangle is red, and the next corner clockwise from around the parameter is yellow, then create an out edge from the triangle with this number to its neighbour across the edge (here, clockwise just means with respect to some self-consistant view of the points). Notice that this ensures there is at most one out-edge for each triangle, and at most one in-edge for each triangle. You can draw the triangles out to prove this, or just look at this picture from the paper for a while:
 
 
-image::https://github.com/jdoncs/jdoncs.github.io/blob/master/images/Fig7Exerpt.png[Excerpt from Figure 7 of the paper, to illustrate the triangle colouring.]
+image::https://github.com/jdoncs/jdoncs.github.io/raw/master/images/Fig7Exerpt.png[Excerpt from Figure 7 of the paper, to illustrate the triangle colouring.]
 
-image::Fig7.png[Excerpt from Figure 7 of the paper, to illustrate the triangle colouring., 300, 200, link="https://github.com/jdoncs/jdoncs.github.io/blob/master/images/Fig7Exerpt.png"]
+image::Fig7.png[Excerpt from Figure 7 of the paper, to illustrate the triangle colouring., 300, 200, link="https://github.com/jdoncs/jdoncs.github.io/raw/master/images/Fig7Exerpt.png"]
 
 Notice that if a triangle has two yellow vertices, or two red vertices, then it has both an in-edge and an out-edge. If it has two blue-vertices, it has no edges at all. However, there exists triangles on the perimeter of the space that _could_ have an in-edge, but only from a region outside the space. Any such triangle is a source. We know any problem will have at least one of these, because Sperner's lemma ensures there's a sink in the graph, and the PPAD observation itself ensures that if there's a sink then somewhere there must be a source. 
 
