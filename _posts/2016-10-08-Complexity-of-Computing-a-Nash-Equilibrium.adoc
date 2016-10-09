@@ -1,5 +1,6 @@
 = Complexity of Computing a Nash Equilibrium
-:hp-tags Game Theory, Computational Complexity
+:hp-tags: Game Theory, Computational Complexity
+
 https://people.csail.mit.edu/costis/simplified.pdf[Paper Here]
 
 This is an older paper I've been meaning to read for a couple of years. It's by Christos Papadimitriou (who I've heard of and read before), Paul Goldberg (I think I've read him before), and Constantinos Daskalakis (who I've never heard of). Papadimitriou does a lot of exciting work. The two things that come to my mind are co-inventing https://en.wikipedia.org/wiki/Price_of_anarchy[Price of Anarchy], a metric for the cost of having self-interested (and rational) individuals do as they please, rather than imposing a solution on all of them from some central authority. It's very useful in mechanism design, because it allows us to quantify the improvement in social utility from using a given mechanism, vs. allowing the agents to settle into whatever the usual Nash Equilibrium is for the game of interest. Papadimitriou has also done some work in genetic algorithms, which purports to show that mutation is entirely pointless in evolutionary search. I haven't read the paper on this yet. Perhaps it should be my next review.
